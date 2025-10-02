@@ -1,10 +1,12 @@
 import React from 'react'
-
+import '../app.css'
 function inp() {
   return (
-    <div>
-  <label >put any thing</label>
- <input type="text" />
+    <div className='cont'>
+  <label >veullez entre votre nome</label>
+ <input type="text"  />
+ <label >veullez entre votre prenom</label>
+ <input type="prenom" />
     </div>
   )
 }
