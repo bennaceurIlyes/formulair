@@ -1,22 +1,25 @@
 
-import { useState } from 'react'
 import './App.css'
-
-import Counterrrr from './cmponent/exercice 1/counterrrr.jsx'
-import Display from './cmponent/exercice 1/Display.jsx'
+import Home from './cmponent/Home'
+import Profile from './cmponent/Profile'
+import Todo from './cmponent/parent/todo'
+import { Link, Routes, Route } from "react-router-dom";
 function App() {
 
-const [count , setcount] =useState(0) ; 
-function incress (){
-  setcount(per => per + 1) ; 
-}
-function  decress(){
-   setcount(per => per -1) ; 
-}
+
   return (
     <>
-     <Counterrrr incress={incress} decress={decress}></Counterrrr>
-      <Display count={count}></Display>
+     <nav style={{display : 'flex' , gap : '10px'}}>
+       <Link to="/"> Home</Link>
+       <Link to="/Profile"> profile</Link>
+       <Link to="/todo"> Tasks</Link>
+     </nav>
+     <Routes>
+      <Route path='/' element={<Home></Home>}></Route>
+      <Route path='/Profile' element={<Profile></Profile>}></Route>
+      <Route path='/todo' element={<Todo></Todo>}> </Route>
+
+     </Routes>
     </>
   )
 }
